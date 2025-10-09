@@ -1,0 +1,9 @@
+##################################################
+#                                                #
+#            Messages Configuration              #
+#                                                #
+##################################################
+
+error:
+  music-files:
+    isnt-valid-extension: "Stai tentando di caricare un file non music files. Assicurati che abbia l'estensione .mf"

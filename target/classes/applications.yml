@@ -1,0 +1,22 @@
+##################################################
+#                                                #
+#               Application Config               #
+#                                                #
+##################################################
+
+#
+# Nome del software
+#
+app-name: "Compositore Automatico"
+
+#
+# Cartella dove si trovano i musicfiles.
+# File con estensione .mf
+#
+music-files-location: "musicfiles"
+
+#
+# Cartella dove si trovano i file di impostazioni
+# musicfiles. File con estensione .yml
+#
+music-files-settings-location: "musicfilessettings"

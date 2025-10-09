@@ -1,0 +1,14 @@
+it\v1nc3nz0\musimathics\data\configuration\enums\MusicFileSettingsData.class
+it\v1nc3nz0\musimathics\data\configuration\enums\ApplicationData.class
+it\v1nc3nz0\musimathics\data\musicfiles\exceptions\InvalidMusicFileException.class
+it\v1nc3nz0\musimathics\data\musicfiles\MusicFile.class
+it\v1nc3nz0\musimathics\data\configuration\MessagesConfig.class
+it\v1nc3nz0\musimathics\api\configuration\Configuration.class
+it\v1nc3nz0\musimathics\data\configuration\MusicFileSettings.class
+it\v1nc3nz0\musimathics\data\configuration\ApplicationConfig.class
+it\v1nc3nz0\musimathics\Main.class
+it\v1nc3nz0\musimathics\api\configuration\AbstractConfiguration.class
+it\v1nc3nz0\musimathics\api\configuration\FilesUtils.class
+it\v1nc3nz0\musimathics\data\musicfiles\exceptions\MusicFileException.class
+it\v1nc3nz0\musimathics\data\configuration\container\ConfigContainer.class
+it\v1nc3nz0\musimathics\data\configuration\enums\MessagesData.class

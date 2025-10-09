@@ -1,0 +1,54 @@
+##################################################
+#                                                #
+#              Music File Settings               #
+#                                                #
+##################################################
+
+#
+# Questo valore indica i BPM iniziali del brano.
+# Se non imposti/cambi il valore dei BPM nel file 
+# '.mf', verrà usato il valore qua specificato
+#
+default-music-bpm: 120
+
+#
+# Questo valore indica la metrica del brano.
+# Se non imposti/cambi il valore della metrica
+# nel file '.mf', verrà usato il valore qua specificato
+#
+default-music-metric: "4/4"
+
+#
+# Imposta qui la scala predefinita del brano.
+# Il brano suonerà in questa tonalità a meno
+# che non viene cambiata durante la sua esecuzione.
+#
+# Note: C, D, E, F, G, A, B
+# Alteration NONE (naturale), #, b
+# Type: MAJ (major), MIN (minor)
+#
+# Attenzione: le note alterate della
+# scala vengono gestite automaticamente
+# Es: C in A MAJ sarà C#
+#
+default-music-scale:
+  note: C
+  alteration: NONE
+  type: MAJ
+
+#
+# Imposta il numero di voci del tuo brano musicale.
+# Ad esempio puoi usare una doppia voce anche per
+# separare cosa suona la mano sinistra e cosa la
+# destra su un brano del pianoforte.
+#
+# Assicurati di aver inserito i files nella cartella
+# dei "musicfiles" impostata nella configurazione base. 
+#
+# Attenzione:
+# - Le voci partono da 0 e non da 1
+# - I file delle voci devono avere il nome v<numero voce>_<nomefile>.mf
+#
+# Esempio: v0_ninnananna.mf, v1_ninnananna.mf
+#
+voices: 1
