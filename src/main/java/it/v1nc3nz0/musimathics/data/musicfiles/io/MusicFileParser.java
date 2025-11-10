@@ -6,6 +6,7 @@ import it.v1nc3nz0.musimathics.data.musicfiles.entity.Metric;
 import it.v1nc3nz0.musimathics.data.musicfiles.entity.Note;
 import it.v1nc3nz0.musimathics.data.musicfiles.entity.NoteList;
 import it.v1nc3nz0.musimathics.data.musicfiles.entity.Pause;
+import it.v1nc3nz0.musimathics.data.musicfiles.entity.Scale;
 import it.v1nc3nz0.musimathics.data.musicfiles.entity.info.Alteration;
 import it.v1nc3nz0.musimathics.data.musicfiles.entity.info.Duration;
 import it.v1nc3nz0.musimathics.data.musicfiles.exceptions.InvalidDurationException;
@@ -94,6 +95,16 @@ public class MusicFileParser
 		line = line.replace(Pause.word()+" ", "");
 		
 		return new Pause(line);
+	}
+	
+	public Scale parseScale(String line)
+	{
+		if(!line.startsWith(Scale.word()))
+			throw new IllegalArgumentException();
+		
+		line = line.replace(Scale.word()+" ", "");
+		
+		return new Scale(line);
 	}
 	
 }

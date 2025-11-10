@@ -29,6 +29,13 @@ public class Alteration
 		public String getName() { return name; }
 		
 		public String getSymbol() { return symbol; }
+		
+		public static Alteration.Symbol fromSymbol(String symbol)
+		{
+			if(symbol.equals("#")) return Alteration.Symbol.SHARP;
+			else if(symbol.equals("b")) return Alteration.Symbol.FLAT;
+			else return Alteration.Symbol.NATURAL;
+		}
 	}
 	
 	private String value;
@@ -74,6 +81,13 @@ public class Alteration
 		Alteration alt = new Alteration();
 		alt.value = "#";
 		return alt;
+	}
+	
+	public static Alteration fromSymbol(String symbol)
+	{
+		if(symbol.equals("#")) return Alteration.createSharp();
+		else if(symbol.equals("b")) return Alteration.createFlat();
+		else return Alteration.createNatural();
 	}
 	
 	public int get()

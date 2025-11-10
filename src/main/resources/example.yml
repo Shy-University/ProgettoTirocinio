@@ -4,6 +4,9 @@
 #                                                #
 ##################################################
 
+# Titolo del brano
+title: "Example"
+
 #
 # Questo valore indica i BPM iniziali del brano.
 # Se non imposti/cambi il valore dei BPM nel file 

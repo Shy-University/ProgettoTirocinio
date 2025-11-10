@@ -8,6 +8,7 @@ public enum MusicFileSettingsData
 	DEFAULT_MUSIC_SCALE_ALTERATION("default-music-scale.alteration"),
 	DEFAULT_MUSIC_SCALE_NOTE("default-music-scale.note"),
 	DEFAULT_MUSIC_SCALE_TYPE("default-music-scale.type"),
+	TITLE("title"),
 	VOICES("voices");
 	
 	

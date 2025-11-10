@@ -2,14 +2,15 @@ package it.v1nc3nz0.musimathics.data.musicfiles.entity;
 
 import it.v1nc3nz0.musimathics.api.musicfiles.MusicFileEntity;
 import lombok.Getter;
-import lombok.Setter;
 
+@Getter
 public class Metric implements MusicFileEntity
 {
 
-	@Getter
-	@Setter
 	private String metric;
+
+	private int numerator;
+	private int denominator;
 	
 	private double value;
 	
@@ -18,8 +19,11 @@ public class Metric implements MusicFileEntity
 		this.metric = metric;
 
 		String[] split = metric.split("/+");
-		double n = (double) Integer.valueOf(split[0]);
-		double d = (double) Integer.valueOf(split[1]);
+		this.numerator = Integer.valueOf(split[0]);
+		this.denominator = Integer.valueOf(split[1]);
+		
+		double n = (double) numerator;
+		double d = (double) denominator;
 		
 		this.value = (n/d)*4;
 	}

@@ -85,6 +85,16 @@ public class Scale implements MusicFileEntity
 	private Notes note;
 	private Type type;
 	
+	public Scale(String line)
+	{
+		String[] split = line.split("\\s+");
+		this.note = Scale.Notes.valueOf(split[0]);
+		this.alteration = Alteration.Symbol.fromSymbol(split[1]);
+		this.type = Scale.Type.valueOf(split[2].toUpperCase());
+		this.alterations = new HashMap<>();
+		buildScale();
+	}
+	
 	public Scale(Notes note, Alteration.Symbol alteration, Type type)
 	{
 		this.note = note;
@@ -154,13 +164,13 @@ public class Scale implements MusicFileEntity
 	@Override
 	public String symbol()
 	{
-		return "S" + note.name() + type.name().toLowerCase();
+		return "S" + note.name() + alteration.getSymbol() + type.name().toLowerCase();
 	}
 	
 	@Override
 	public String toString()
 	{
-		return Scale.word() + " "+ note.name() + " " + type.name();
+		return Scale.word() + " "+ note.name() + " " + alteration.getSymbol() + " " + type.name();
 	}
 	
 	public static String word()

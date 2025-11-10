@@ -121,6 +121,14 @@ public class Note implements MusicFileEntity
 		this.frequence = Note.semitoneToFrequence(this.semitone);
 	}
 	
+	public void adjust(Scale scale)
+	{
+		if(alteration.isNatural()) return;
+		Scale.Notes notes = Scale.Notes.valueOf(String.valueOf(noteInfo.name().charAt(0)));
+		Alteration alt = scale.getAlteration(notes);
+		alteration.union(alt);
+	}
+	
 	public static double semitoneToFrequence(int semitone)
 	{
 		return Note.START_FREQUENCE * Math.pow(1.059463,semitone-1);
@@ -151,7 +159,7 @@ public class Note implements MusicFileEntity
 	public boolean validate()
 	{
 		try
-		{
+		{  
 			if(semitone < 1)
 				throw new NoteOutOfBoundException(1 - semitone);
 			

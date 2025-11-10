@@ -24,4 +24,18 @@ public class ScaleKey
 				&& type.name().equals(key.getType().name());
 	}
 	
+	public static ScaleKey create(String note, String alt, String type)
+	{
+		Scale.Notes notes = Scale.Notes.valueOf(note);
+		
+		Alteration.Symbol symbol;
+		if(alt.equals("#")) symbol = Alteration.Symbol.SHARP;
+		else if(alt.equals("b")) symbol = Alteration.Symbol.FLAT;
+		else symbol = Alteration.Symbol.NATURAL;
+		
+		Scale.Type types = Scale.Type.valueOf(type);
+		
+		return new ScaleKey(notes,symbol,types);
+	}
+	
 }

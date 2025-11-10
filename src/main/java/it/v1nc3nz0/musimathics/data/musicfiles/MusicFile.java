@@ -3,10 +3,13 @@ package it.v1nc3nz0.musimathics.data.musicfiles;
 import java.io.File;
 import java.io.IOException;
 
+import it.v1nc3nz0.musimathics.data.music.caches.ScaleCache;
+import it.v1nc3nz0.musimathics.data.music.caches.entity.ScaleKey;
 import it.v1nc3nz0.musimathics.data.musicfiles.entity.BPM;
 import it.v1nc3nz0.musimathics.data.musicfiles.entity.Bar;
 import it.v1nc3nz0.musimathics.data.musicfiles.entity.Metric;
 import it.v1nc3nz0.musimathics.data.musicfiles.entity.Note;
+import it.v1nc3nz0.musimathics.data.musicfiles.entity.Scale;
 import it.v1nc3nz0.musimathics.data.musicfiles.exceptions.InvalidDurationException;
 import it.v1nc3nz0.musimathics.data.musicfiles.exceptions.InvalidMusicFileException;
 import it.v1nc3nz0.musimathics.data.musicfiles.exceptions.NoMixedSymbolsException;
@@ -76,6 +79,16 @@ public class MusicFile extends File
 					entities.add(parser.parseNote(line));
 				else
 					entities.add(parser.parseNoteList(line));
+				
+				continue;
+			}
+			
+			if(line.startsWith(Scale.word()))
+			{
+				Scale scale = parser.parseScale(line);
+				ScaleKey key = new ScaleKey(scale.getNote(),scale.getAlteration(),scale.getType());
+				ScaleCache.add(key, scale);
+				entities.add(scale);
 			}
 		}
 		
